@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /quotes/{quoteId} {
+      // Anyone can read the quote catalog.
+      allow read: if true;
+      // Only a signed-in user can add, edit, or delete.
+      // Since sign-up is disabled and only you have an account,
+      // "signed in" effectively means "it's you".
+      allow write: if request.auth != null;
+    }
+  }
+}

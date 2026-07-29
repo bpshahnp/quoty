@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin &middot; The Quote Catalog</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="login-card" id="loginCard">
+  <h1>Librarian sign-in</h1>
+  <form id="loginForm">
+    <div class="field">
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" name="email" type="email" required autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" name="password" type="password" required autocomplete="current-password">
+    </div>
+    <button class="btn" type="submit">Sign in</button>
+    <div class="error-msg" id="loginError"></div>
+  </form>
+</div>
+
+<div class="admin-shell" id="dashboard" style="display:none;">
+  <div class="admin-header">
+    <h1>Catalog admin</h1>
+    <div>
+      <span class="meta" id="userEmail" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--pencil);margin-right:1rem;"></span>
+      <button class="btn secondary" id="logoutBtn">Sign out</button>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2 id="formTitle">Add a quote</h2>
+    <form id="quoteForm">
+      <input type="hidden" id="fieldId">
+      <div class="field">
+        <label for="fieldText">Quote</label>
+        <textarea id="fieldText" required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="fieldAuthor">Author</label>
+          <input id="fieldAuthor" type="text" placeholder="Unknown">
+        </div>
+        <div class="field">
+          <label for="fieldCategory">Category / tag</label>
+          <input id="fieldCategory" type="text" placeholder="e.g. courage">
+        </div>
+      </div>
+      <button class="btn" type="submit">Save quote</button>
+      <button class="btn secondary" type="button" id="cancelEditBtn" style="display:none;">Cancel edit</button>
+      <div class="error-msg" id="formError"></div>
+    </form>
+  </div>
+
+  <ul class="admin-list" id="adminList"></ul>
+</div>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

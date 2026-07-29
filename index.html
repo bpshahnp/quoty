@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quote Catalog</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1 class="site-title">The Quote <span class="accent">Catalog</span></h1>
+  <div class="catalog-meta" id="catalogCount">Loading quotes&hellip;</div>
+</header>
+
+<nav class="drawer-tabs" id="drawerTabs"></nav>
+
+<div class="search-row">
+  <input class="search-input" id="searchInput" type="text" placeholder="Search by line or author&hellip;">
+</div>
+
+<main class="catalog-grid" id="catalogGrid">
+  <div class="loading-state">Pulling cards from the drawer&hellip;</div>
+</main>
+
+<footer class="site-footer">
+  Filed by hand &middot; <a href="admin.html">Admin</a>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
